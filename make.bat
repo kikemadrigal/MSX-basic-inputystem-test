@@ -28,19 +28,19 @@ rem start /wait tools/tokenizer/msxbatoken.py obj/game.asc obj/game.bas
 
 
 
-if exist %TARGET_DSK% del /f /Q %TARGET_DSK%
-copy tools\Disk-Manager\main.dsk .\%TARGET_DSK%
+rem if exist %TARGET_DSK% del /f /Q %TARGET_DSK%
+rem copy tools\Disk-Manager\main.dsk .\%TARGET_DSK%
 rem añadimos todos los .bas de la carpeta obj al disco
 rem por favor mirar for /?
 rem for /R obj/ %%a in (*.bas) do (
     rem start /wait tools/Disk-Manager/DISKMGR.exe -A -F -C %TARGET_DSK% "%%a")  
-start /wait tools/Disk-Manager/DISKMGR.exe -A -F -C %TARGET_DSK% obj/autoexec.bas  
-start /wait tools/Disk-Manager/DISKMGR.exe -A -F -C %TARGET_DSK% obj/is1.bas 
+rem start /wait tools/Disk-Manager/DISKMGR.exe -A -F -C %TARGET_DSK% obj/autoexec.bas  
+rem start /wait tools/Disk-Manager/DISKMGR.exe -A -F -C %TARGET_DSK% obj/is1.bas 
 rem añadimos todos los arhivos binarios de la carpeta bin al disco
 rem recuerda que un sc2, sc5, sc8 es también un archivo binario, renombralo
 rem por favor mirar for /?
-for /R bin/ %%a in (*.*) do (
-    start /wait tools/Disk-Manager/DISKMGR.exe -A -F -C %TARGET_DSK% "%%a")   
+rem for /R bin/ %%a in (*.*) do (
+rem     start /wait tools/Disk-Manager/DISKMGR.exe -A -F -C %TARGET_DSK% "%%a")   
 
 rem abrimos nuestro emulador preferido
 rem copy %TARGET_DSK% tools\emulators\BlueMSX
@@ -52,6 +52,7 @@ rem MSX 1
 rem start /wait tools/emulators/openmsx/openmsx.exe  -ext Sony_HBD-50 -ext ram32k -diska %TARGET_DSK% 
 rem start /wait tools/emulators/openmsx/openmsx.exe -script tools/emulators/openmsx/emul_start_config.txt
 rem MSX2
-start /wait tools/emulators/openmsx/openmsx.exe -machine Philips_NMS_8255 -diska %TARGET_DSK%
+rem start /wait tools/emulators/openmsx/openmsx.exe -machine Philips_NMS_8255 -diska %TARGET_DSK%
+start /wait tools\emulators\openmsx\openmsx.exe -machine Philips_NMS_8255 -diska .\obj
 rem MSX2+
 rem start /wait tools/emulators/openmsx/openmsx.exe -machine Sony_HB-F1XV -diska %TARGET_DSK%

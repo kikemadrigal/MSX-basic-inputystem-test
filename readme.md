@@ -1,7 +1,15 @@
 # Sistemas de input
 
-## Método 1: Conservando la posición y
+https://kikemadrigal.github.io/MSX-basic-inputystem-test/?disk=test.dsk
 
-https://github.com/kikemadrigal/basic-inputystem-test/blob/main/src/is1.bas
 
-http://msx.tipolisto.es/webmsx/standalone/?disk=files/is1.dsk
+## Método 1: inkey$ - teclas o p a - time 5-6
+
+## Método 2: on stick(0) goto - time 4
+
+## Método 3: stick(0) if then - time 5-6
+
+## Método 4: on stick(0) gosub - time 4-5
+
+
+<img src=docs/1.PNG width=400px />
