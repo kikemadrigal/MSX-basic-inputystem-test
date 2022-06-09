@@ -53,6 +53,6 @@ rem start /wait tools/emulators/openmsx/openmsx.exe  -ext Sony_HBD-50 -ext ram32
 rem start /wait tools/emulators/openmsx/openmsx.exe -script tools/emulators/openmsx/emul_start_config.txt
 rem MSX2
 rem start /wait tools/emulators/openmsx/openmsx.exe -machine Philips_NMS_8255 -diska %TARGET_DSK%
-start /wait tools\emulators\openmsx\openmsx.exe -machine Philips_NMS_8255 -diska .\obj
+start /wait tools\emulators\openmsx-16.0\openmsx.exe -machine Philips_NMS_8255 -diska .\obj
 rem MSX2+
 rem start /wait tools/emulators/openmsx/openmsx.exe -machine Sony_HB-F1XV -diska %TARGET_DSK%

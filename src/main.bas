@@ -23,8 +23,9 @@
     1 'Sistema de física / input'
     1 '100 gosub 1000
     1 '100 gosub 2000
+    1 '100 gosub 5000
     1 '100 gosub 4000
-    100 gosub 5000
+    100 gosub 7000
     1 'Sistema de render'
     110 put sprite pp,(px,py),pc,ps
     1 'Pintamos el marcador'
@@ -149,15 +150,20 @@
 6690 return
 
 
-
+1 ' --------------------------------------------------------------------------------'
+1 '   INPUT/PHYSIC SYSTEM 5 - on stick with expressions - time 
+1 ' --------------------------------------------------------------------------------'
+    1 'stick(0) x=x -(st and horizontal-limit-right)*horizontal-velocity + (st and horizontal-limit-left)*horizontal-velocity'
+    7000 st=stick(0):px=px -(st=3 and px<247)*pv+(st=7 and px>0)*pv:py=py-(st=5 and py<192)*pl+(st=1 and py>0)*pl
+7990 return
 
 
 1 ' ----------------------'
 1 '     HUD'
 1 ' ----------------------'
     9000 line (0,180)-(256,212),15,bf 
-    9050 preset (0,186):print #1,time
-    9060 time=0
+    9060 preset (0,186):print #1,time
+    9070 time=0
 9090 return
 
 
@@ -167,7 +173,7 @@
 1 ' Inicialización variables'
     1 ' Componente físicia'
     1 'px=posicion x,pw= ancho player,ph=alto player, pv=velocidad eje x, pl=velocidad eje y, po=posición y vieja, pa=salto activado player'
-    10000 px=15*8:py=15*8:pw=16:ph=16:pv=8:pl=8:po=py:pa=0
+    10000 px=10*8:py=20*8:pw=16:ph=16:pv=8:pl=8:po=py:pa=0
     1 ' Componente render'
     10030 pc=6:pp=0:ps=0
 10090 return
